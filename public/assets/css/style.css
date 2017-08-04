@@ -1,0 +1,33 @@
+body {
+	background-color: white;
+	box-sizing: border-box;
+}
+
+.devour {
+	display: inline;
+	margin-top: 20px;
+}
+
+.custdev {
+	position: inherit;
+	margin-top: .4em;
+}
+
+.butdev {
+	position: inherit;
+	margin-top: .2em;
+}
+
+.topper {
+	padding: 30px;
+}
+
+.burger-line {
+	padding: 15px 30px 12px 30px;
+	margin: 5px 0;
+	background: #faebd7;
+}
+
+.form-group {
+	margin-bottom: 5px;
+}

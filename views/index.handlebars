@@ -1,0 +1,81 @@
+<div class="container">
+
+  <div class="row topper text-center">
+    <div class="col-md-12"></div>
+    <img src="/assets/img/burger.png">
+    <h1>Eat Da Burger!</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <ol>
+        {{#each burgers}}
+          {{#unless devoured}}
+
+            <div class="row">
+              <div class="col-md-9 burger-line">
+                <li>
+                <p>{{this.burger_name}}</p>
+              </div>
+
+                <div class="col-md-3">
+                <form class="form-group devour" action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="text" class="custdev" placeholder="Customer?"
+                           name="custname" size="5">
+                    <button type="submit" class="butdev">Devour!</button>
+                </form>
+                </div>
+              </div>
+            </li>
+
+          {{/unless}}
+        {{/each}}
+      </ol>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <ol>
+        {{#each burgers}}
+          {{#if devoured}}
+            <div class="col-md-12 burger-line">
+              <li>
+                <p>{{this.burger_name}}
+                  <span> (eaten by {{this.Customer.customer_name}})</span>
+                </p>
+              </li>
+            </div>
+          {{/if}}
+        {{/each}}
+      </ol>
+
+
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12">
+
+      <h2>Add a Burger</h2>
+
+        <form class="create-form" action="/" method="POST">
+
+          <div class="form-group">
+            <textarea id="bg" name="name" rows="4" cols="50"></textarea>
+          </div>
+          <br>
+
+          <button class="btn btn-primary" type="submit">Add Burger</button>
+          <br><br>
+          <p>Enter the burger you want to eat and click the "submit" button</p>
+
+        </form>
+
+    </div>
+  </div>
+
+
+</div>
